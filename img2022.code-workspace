@@ -1,0 +1,12 @@
+{
+	"folders": [
+		{
+			"name": "img_metrolyse",
+			"path": "..\\IMG_Gitlab\\img_metrolyse"
+		},
+		{
+			"name": "SSH FS - img_ssh",
+			"uri": "ssh://img_ssh/"
+		}
+	]
+}
