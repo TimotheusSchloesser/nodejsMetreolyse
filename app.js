@@ -15,6 +15,20 @@ app.get('/', function(req,res){
     })
 })
 
+app.get('login', function(req,res){
+    res.render('index', {
+        title:'Hello',
+        message:'Hell o World!'
+    })
+})
+
+app.post('/', function(req,res){
+    res.render('index', {
+        title:'Hello',
+        message:'Hell o World!'
+    })
+})
+
 app.listen(port,function(){
     console.log("listen: " + port)
 })
