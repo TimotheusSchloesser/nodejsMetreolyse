@@ -1,22 +1,20 @@
-var http = require('http')
-fs = require('fs')
-port = 80
+const path = require("path")
+const express = require("express")
+const { appendFile } = require("fs")
+const app = express()
+const port = 80
 
-http.createServer(function(req, res){
-    if(req.url.indexOf(".css") !== -1){
-        fs.readFile(__dirname + "/css/style.css",function(err, data){
-            res.writeHead(200,{'content-Type': 'text/css'})
-            res.write(data)
-            res.end()  
-        })
-    } 
-    else{ 
-        fs.readFile(__dirname + "/index.html",function(err, data){
-            res.writeHead(200,{'content-Type': 'text/html'})
-            res.write(data)
-            res.end()  
-        })
-    }
-    
-}).listen(port)
-console.log('running on port: '+ port)
+app.set('view engine', 'pug')
+app.use(express.static('public'))
+
+
+app.get('/', function(req,res){
+    res.render('index', {
+        title:'Hello',
+        message:'Hell o World!'
+    })
+})
+
+app.listen(port,function(){
+    console.log("listen: " + port)
+})
