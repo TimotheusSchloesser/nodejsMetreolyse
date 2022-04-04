@@ -1,5 +1,5 @@
-var http = require('http')
-var fs = require('fs')
+var http = require('http'),
+fs = require('fs')
 port = 80
 
 http.createServer(function(req, res){
