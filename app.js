@@ -1,58 +1,22 @@
-const http = require('http')
-const https = require('https')
-const path = require("path")
-const express = require("express")
-const fs = require("fs")
-const app = express()
-const port = 80
-const sslPort = 443
-const sslOpt = {
-    key: fs.readFileSync("./ssl/privkey.pem"),
-    cert: fs.readFileSync("./ssl/cert.pem")
-}
+var http = require('http'),
+fs = require('fs')
+port = 80
 
-global.__basedir = __dirname
-
-app.set('view engine', 'pug')
-app.set('views', path.join(__dirname, 'views'))
-
-app.use(express.static(path.join(__dirname, "public")))
-
-
-let http_server = http.createServer((req, res) => {
-    console.log('redirect')
-    res.writeHead(301, { "Location": "https://lyra.et-inf.fho-emden.de:20144/" })
-    res.end()
-}).listen(port, (err) => {
-    console.log("Port:" + port)
-})
-
-
-
-let server = https.createServer(sslOpt, app).listen(sslPort, (err) => {
-    console.log("ListenOnPort" + sslPort)
-})
-
-
-
-
-app.get('/', function(req,res){
-    res.render('index', {
-        title:'Hello',
-        message:'Hell o World!'
-    })
-})
-
-app.get('login', function(req,res){
-    res.render('index', {
-        title:'Hello',
-        message:'Hell o World!'
-    })
-})
-
-app.post('/', function(req,res){
-    res.render('index', {
-        title:'Hello',
-        message:'Hell o World!'
-    })
-})
+http.createServer(function(req, res){
+    if(req.url.indexOf(".css") !== -1){
+        fs.readFile(__dirname + "/css/style.css",function(err, data){
+            res.writeHead(200,{'content-Type': 'text/css'})
+            res.write(data)
+            res.end()  
+        })
+    } 
+    else{ 
+        fs.readFile(__dirname + "/index.html",function(err, data){
+            res.writeHead(200,{'content-Type': 'text/html'})
+            res.write(data)
+            res.end()  
+        })
+    }
+    
+}).listen(port)
+console.log('running on port: '+ port)
