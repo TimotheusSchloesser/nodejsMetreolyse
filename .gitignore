@@ -1,3 +1,4 @@
 
 sftp.json
-.ssl/
+ssl/
+*.pem

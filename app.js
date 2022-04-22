@@ -17,7 +17,7 @@ const sslOpt = {
 global.__basedir = __dirname
 
 app.set('view engine', 'pug')
-app.set('views', path.join(__dirname, 'views'))
+// app.set('views', path.join(__dirname, 'views'))
 
 app.use(express.static(path.join(__dirname, "public")))
 
@@ -35,7 +35,7 @@ http.createServer((req, res) => {
     console.log("Port:" + port)
 })
 
-let server = https.createServer(sslOpt, app).listen(sslPort, (err) => {
+https.createServer(sslOpt, app).listen(sslPort, (err) => {
     console.log("ListenOnPort " + sslPort)
 })
 
