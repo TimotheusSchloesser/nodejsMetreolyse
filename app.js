@@ -17,7 +17,7 @@ const sslOpt = {
 global.__basedir = __dirname
 
 app.set('view engine', 'pug')
-// app.set('views', path.join(__dirname, 'views'))
+app.set('views', path.join(__dirname, 'views'))
 
 app.use(express.static(path.join(__dirname, "public")))
 
@@ -45,3 +45,9 @@ app.get('/', (req, res) => {
         message: 'World!'
     })
 })
+
+
+// const names = ['John Doe', 'Roger Roe', 'Paul Smith', 'Rebecca Jordan'];
+// const res = renderFile('index.pug', { 'names': names });
+
+// console.log(res);
