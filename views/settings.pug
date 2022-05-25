@@ -1,0 +1,17 @@
+extends layout
+
+block title 
+  title metrolyse
+
+block content
+  body
+    include navigation 
+  .content
+    .triggerAdjust Adjust Your mobile sensiblity(0.1 - 1 m/s2)
+      br  
+      span.sense #{sensibility}
+      br
+      input.senseSlider(type="range" min="0.1" max="1" step="0.1")
+
+
+   

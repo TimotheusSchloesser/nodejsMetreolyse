@@ -8,6 +8,7 @@ const app = express()
 
 const port = 80
 const sslPort = 443
+// const sslPort = 10000
 const sslOpt = {
     key: fs.readFileSync("./ssl/privkey.pem"),
     cert: fs.readFileSync("./ssl/cert.pem")
@@ -39,15 +40,26 @@ https.createServer(sslOpt, app).listen(sslPort, (err) => {
     console.log("ListenOnPort " + sslPort)
 })
 
+const books = [{"title":"LillyFee"}]
+const users =["sven","hio","hoi"]
+
 app.get('/', (req, res) => {
-    res.render("index", {
-        title: 'Hello',
-        message: 'World!'
+    res.writeHead(301, { "Location": "https://lyra.et-inf.fho-emden.de:20144/metrolyse" })
+    res.end()
+})
+
+app.get('/metrolyse', (req, res) => {
+    res.render("index")
+    res.end()
+})
+
+app.get('/stuff', (req, res) => {
+    res.render("stuff", {
+        title: 'SomeStuff'
     })
 })
 
-
-// const names = ['John Doe', 'Roger Roe', 'Paul Smith', 'Rebecca Jordan'];
-// const res = renderFile('index.pug', { 'names': names });
-
-// console.log(res);
+app.post('/metrolyse/statistic', function (req, res) {
+    res.render("statistic")
+    res.json(books)
+})

@@ -5,3 +5,4 @@ package.json
 ssl/
 /node_modules
 *.pem
+/views/stuff.pug

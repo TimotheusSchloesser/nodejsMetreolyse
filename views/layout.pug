@@ -1,0 +1,31 @@
+
+doctype html
+html(lang='en')
+  head
+    title=title
+    meta(charset='UTF-8')
+    meta(name="viewport" content="target-densitydpi=device-dpi, initial-scale=0.6, user-scalable=no")
+    <link rel="icon" type="ico" href="../pics/2542SticksSmall.ico">
+    link(href='../css/metroStyle.css', rel = "stylesheet")
+    script(type="module" src='../js/metronomControl.js')
+    script(type="module" src='../js/timer.js')
+    script(type="module" src='../js/input.js')
+    script(type="module" src='../js/settings.js')
+    script(type="module" src='../js/canvas.js')
+    script(type="module" src='../js/trainDiary.js')
+      block title   
+        title Metrolyse //-Defaulttitle
+  body
+    - var online
+    case online 
+      when 0
+      when 1
+        p.onOff offline 
+      default
+        p.onOff online
+      //-block content
+    include navigation
+    br
+    block foot  
+    #footer
+      p Thanks for testing!

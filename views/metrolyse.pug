@@ -1,0 +1,33 @@
+extends layout
+
+block title 
+  title metrolyse
+
+block content
+  h1 #{title}
+  body
+    include navigation 
+  .content
+  
+    .outry
+      .displayEntry 
+        br
+        span.ja #{entry} 
+        span.Text test
+        
+                       
+      .adjBpm
+        br
+        br
+        button.adjBpm-btn-minus -
+        input.slider(type="range" min="10" max="300" step="1")
+        button.adjBpm-btn-plus +
+                   
+      .startButton >
+    
+
+    include visual
+    include db
+
+      
+          
