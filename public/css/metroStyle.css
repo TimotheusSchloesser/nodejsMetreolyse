@@ -1,0 +1,123 @@
+* {
+    padding: 0;
+    margin: 0;
+    text-align: center;
+}
+   
+body {
+    background-color: rgb(78, 78, 78);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1em;
+    color: white;
+    border: 0.5em solid black; 
+    display: inline-grid;
+}
+
+.content {
+    border: 1em;
+}
+
+.displayBpm{
+    text-align: center;
+}
+.displayBpm .tempo {
+    color: rgb(252, 92, 0);
+    font-size: 3em;
+}
+
+.adjBpm .adjBpm-btn-minus {
+    width: 0.6em;
+    font-size: 3.8em;
+   color: red;
+   line-height: 78%;
+} 
+
+.adjBpm .slider {
+    font-size: 5em;
+    cursor: pointer;
+}
+
+/* input[type=range]::-webkit-slider-thumb {
+    background-color: rgb(252, 92, 0);
+    border: none;
+} */
+
+.adjBpm .adjBpm-btn-plus {
+    font-size: 3.2em;
+    color:green;
+    line-height: 90%;
+    } 
+
+.timeSignature {
+    
+    text-align: center;
+    font-size: 2em;
+}
+.timeSignature .timeSig-minus {
+    width: 0.7em;
+    height: 0.7em;
+    border-radius: 50%;
+    border: 1px solid black;
+        color: red;
+        cursor: pointer;
+        line-height: 50%;
+        margin: 0 5%;
+        justify-content: left;
+    }
+
+.timeSignature .timeSig-minus:hover {
+    background: rgb(0, 0, 0);
+    color: red;
+}
+
+
+.timeSignature .timeSig-act {
+    color: white;
+    }
+.timeSignature .timeSig-plus {
+    width: 0.7em;
+    height: 0.7em;
+    border-radius: 50%;
+    border: 1px solid black;
+    color: green;
+    cursor: pointer;
+    line-height: 70%;
+    margin: 0 5%;
+    justify-content: right;
+    }
+
+
+.timeSig-text {
+    text-align: center;
+    line-height: 10%;
+    margin-bottom: 2em;
+}
+.startButton {
+    width: 1em;
+    height: 1em;
+    font-size: 2em;
+    color: green;
+    border-radius: 50%;
+    border: 1px solid black;
+    text-align: center;
+    cursor: pointer;
+    line-height: 105%;
+    margin: 0 auto;
+}
+
+#canvas {
+    margin-top: 1em;
+    border-bottom: 0.1em solid black;
+    border-top: 0.1em solid black;
+    display: flex;
+    justify-content: center;
+    font-size: 2em;
+}
+
+.navigation {
+    border: 0.1em solid black;
+    display: inline;
+    justify-content: left;
+    font-size: 2em;
+    color: black;
+}

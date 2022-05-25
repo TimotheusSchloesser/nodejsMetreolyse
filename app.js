@@ -5,6 +5,11 @@ const express = require('express')
 const path = require('path')
 const fs = require('fs')
 const app = express()
+// const WebSocket = require("ws")
+// const MongoClient = require('mongodb').MongoClient
+// const url = "mongodb://localhost:27017/trainDiary"
+
+
 
 const port = 80
 const sslPort = 443
@@ -43,23 +48,15 @@ https.createServer(sslOpt, app).listen(sslPort, (err) => {
 const books = [{"title":"LillyFee"}]
 const users =["sven","hio","hoi"]
 
+
+
 app.get('/', (req, res) => {
-    res.writeHead(301, { "Location": "https://lyra.et-inf.fho-emden.de:20144/metrolyse" })
-    res.end()
+    res.render("metrolyse")
+    title: 'Metrolyse'
 })
 
-app.get('/metrolyse', (req, res) => {
-    res.render("index")
-    res.end()
-})
 
-app.get('/stuff', (req, res) => {
-    res.render("stuff", {
-        title: 'SomeStuff'
-    })
-})
-
-app.post('/metrolyse/statistic', function (req, res) {
-    res.render("statistic")
-    res.json(books)
+app.get('/settings', (req, res) => {
+    res.render("settings")
+    title: "Settings"
 })

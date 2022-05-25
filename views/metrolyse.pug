@@ -4,16 +4,15 @@ block title
   title metrolyse
 
 block content
-  h1 #{title}
   body
     include navigation 
   .content
   
-    .outry
-      .displayEntry 
+    .metronome
+      .displayBpm 
         br
-        span.ja #{entry} 
-        span.Text test
+        span.tempo #{bpm} 150 
+        span.bpmText BPM 
         
                        
       .adjBpm
@@ -23,11 +22,10 @@ block content
         input.slider(type="range" min="10" max="300" step="1")
         button.adjBpm-btn-plus +
                    
-      .startButton >
+      .startButton START   
     
+      .buttontest
+        span.checking  #{checkSum}
 
     include visual
-    include db
-
-      
           
