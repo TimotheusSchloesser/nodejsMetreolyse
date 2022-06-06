@@ -6,18 +6,36 @@ const path = require('path')
 const fs = require('fs')
 const app = express()
 // const WebSocket = require("ws")
-// const MongoClient = require('mongodb').MongoClient
-// const url = "mongodb://localhost:27017/trainDiary"
-
-
 
 const port = 80
 const sslPort = 443
-// const sslPort = 10000
 const sslOpt = {
     key: fs.readFileSync("./ssl/privkey.pem"),
     cert: fs.readFileSync("./ssl/cert.pem")
 }
+
+var MongoClient = require('mongodb').MongoClient;
+var database;
+
+// Connection URL
+var url = 'mongodb://localhost:27017/';
+// Use connect method to connect to the Server
+
+MongoClient.connect(url, function (err, client) {
+    if (err) {
+        console.log('failed to connect', err.message)
+        process.exit(1)
+    }
+
+    var db = client.db('traindiary');
+    database = db
+    db.collection('dates').findOne({}, function (findErr, result) {
+    // db.collection.find({}, function (findErr, result) {
+        if (findErr) throw findErr;
+        console.log(result.date);
+        client.close();
+    });
+});
 
 
 global.__basedir = __dirname
@@ -45,8 +63,8 @@ https.createServer(sslOpt, app).listen(sslPort, (err) => {
     console.log("ListenOnPort " + sslPort)
 })
 
-const books = [{"title":"LillyFee"}]
-const users =["sven","hio","hoi"]
+// const books = [{"title":"LillyFee"}]
+// const users =["sven","hio","hoi"]
 
 
 
@@ -59,4 +77,9 @@ app.get('/', (req, res) => {
 app.get('/settings', (req, res) => {
     res.render("settings")
     title: "Settings"
+})
+
+app.get('/stuff', (req, res) => {
+    res.render("stuff")
+    title: "Stuff"
 })

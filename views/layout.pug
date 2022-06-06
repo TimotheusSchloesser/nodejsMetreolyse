@@ -5,7 +5,7 @@ html(lang='en')
     title=title
     meta(charset='UTF-8')
     meta(name="viewport" content="target-densitydpi=device-dpi, initial-scale=0.6, user-scalable=no")
-    <link rel="icon" type="ico" href="../pics/2542SticksSmall.ico">
+    link(rel="icon" type="ico" href="../pics/2542SticksSmall.ico")
     link(href='../css/metroStyle.css', rel = "stylesheet")
     script(type="module" src='../js/metronomControl.js')
     script(type="module" src='../js/timer.js')
@@ -16,16 +16,16 @@ html(lang='en')
       block title   
         title Metrolyse //-Defaulttitle
   body
-    - var online
-    case online 
-      when 0
-      when 1
-        p.onOff offline 
-      default
-        p.onOff online
-      //-block content
     include navigation
-    br
+
+      //- - var online
+      //- case online 
+      //-   when 0
+      //-   when 1
+      //-     p.onOff offline 
+      //-   default
+      //-     p.onOff online
+        //-block content
     block foot  
     #footer
       p Thanks for testing!
