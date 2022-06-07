@@ -54,7 +54,6 @@ MongoClient.connect(url, function (err, client) {
         }
         console.log(documents)
         let dbTestDate = JSON.stringify(documents)
-        console.log(dbTestDate)
         app.get('/db', function (req, res) {
             res.render('db', { title: 'dbTest', message: dbTestDate});
          });
