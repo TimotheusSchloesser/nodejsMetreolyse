@@ -3,7 +3,8 @@ const http = require('http')
 const https = require('https')
 const express = require('express')
 const path = require('path')
-const fs = require('fs')
+const fs = require('fs');
+const { exit } = require('process');
 const app = express()
 // const WebSocket = require("ws")
 
@@ -28,13 +29,52 @@ MongoClient.connect(url, function (err, client) {
     }
 
     var db = client.db('traindiary');
-    database = db
-    db.collection('dates').findOne({}, function (findErr, result) {
-    // db.collection.find({}, function (findErr, result) {
-        if (findErr) throw findErr;
-        console.log(result.date);
-        client.close();
-    });
+    
+    const testEntry = {
+        date : Date.now(),
+        bpm : "150",
+        stats : "90"
+    }
+
+    const entrys = db.collection('dates')
+    
+    
+    // entrys.insertOne(testEntry, err => {
+    //     if(err) {
+    //         console.log('failed to write in DB')
+    //         process.exit(1)
+    //     }
+    //     console.log('Test sucessfully')
+    // })
+
+    entrys.find({date: '1.1.11'}).toArray((err, documents) => {
+        if(err) {
+           console.log('failed to find!')
+           process.exit(1) 
+        }
+        console.log(documents)
+        let dbTestDate = JSON.stringify(documents)
+        console.log(dbTestDate)
+        app.get('/db', function (req, res) {
+            res.render('db', { title: 'dbTest', message: dbTestDate});
+         });
+        client.close()
+    })
+
+        // entrys.find({date: '1.1.11'}).toArray((err, documents) => {
+    //     if(err) {
+    //        console.log('failed to find!')
+    //        process.exit(1) 
+    //     }
+    //     console.log(documents)
+    // })
+
+    // database = db
+    // db.collection('dates').findOne({}, function (findErr, result) {
+    //     if (findErr) throw findErr;
+    //     console.log(result.date);
+    //     client.close();
+    // });
 });
 
 
