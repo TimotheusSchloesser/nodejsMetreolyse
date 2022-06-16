@@ -1,10 +1,10 @@
 'use strict';
 const http = require('http')
 const https = require('https')
-const express = require('express')
-const path = require('path')
+// const express = require('express')
+// const path = require('path')
 const fs = require('fs');
-const { exit } = require('process');
+// const { exit } = require('process');
 const getApp = require('./lib/getApp')
 // const database = require('./lib/database')
 // const WebSocket = require("ws")
@@ -13,14 +13,30 @@ const port = 80
 const sslPort = 443
 const sslOpt = {
     key: fs.readFileSync("./ssl/privkey.pem"),
-    cert: fs.readFileSync("./ssl/cert.pem")
+    cert: fs.readFileSync("./ssl/cert.pem") 
 }
+
+http.createServer((req, res) => {
+    console.log('redirect')
+    res.writeHead(301, { "Location": "https://lyra.et-inf.fho-emden.de:20144/" })
+    res.end()
+}).listen(port, (err) => {
+    console.log("Port:" + port)
+})
+
+const server = https.createServer(sslOpt, app)
+server.listen(sslPort, (err) => {
+    if(err) {
+        console.log('server Error')
+    }
+    console.log("ListenOnPort " + sslPort)
+})
 
 // var MongoClient = require('mongodb').MongoClient;
 // var database;
 
 // Connection URL
-var url = 'mongodb://localhost:27017/';
+// var url = 'mongodb://localhost:27017/';
 // Use connect method to connect to the Server
 
 // MongoClient.connect(url, function (err, client) {
@@ -89,16 +105,3 @@ var url = 'mongodb://localhost:27017/';
 // app.use(express.urlencoded({
 //     extended: true
 // }))
-
-
-http.createServer((req, res) => {
-    console.log('redirect')
-    res.writeHead(301, { "Location": "https://lyra.et-inf.fho-emden.de:20144/" })
-    res.end()
-}).listen(port, (err) => {
-    console.log("Port:" + port)
-})
-
-https.createServer(sslOpt, app).listen(sslPort, (err) => {
-    console.log("ListenOnPort " + sslPort)
-})
