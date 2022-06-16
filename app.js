@@ -6,6 +6,7 @@ const path = require('path')
 const fs = require('fs');
 const { exit } = require('process');
 const app = express()
+const routes = require('./lib/routes')
 // const WebSocket = require("ws")
 
 const port = 80
@@ -102,23 +103,7 @@ https.createServer(sslOpt, app).listen(sslPort, (err) => {
     console.log("ListenOnPort " + sslPort)
 })
 
-// const books = [{"title":"LillyFee"}]
-// const users =["sven","hio","hoi"]
-
-
-
-app.get('/', (req, res) => {
-    res.render("metrolyse")
-    title: 'Metrolyse'
-})
-
-
-app.get('/settings', (req, res) => {
-    res.render("settings")
-    title: "Settings"
-})
-
-app.get('/stuff', (req, res) => {
-    res.render("stuff")
-    title: "Stuff"
-})
+app.get('/', routes.getMetrolyse)
+app.get('/settings', routes.getSettings)
+app.get('/stuff', routes.getStuff)
+app.get('/traindiary', routes.getDb)

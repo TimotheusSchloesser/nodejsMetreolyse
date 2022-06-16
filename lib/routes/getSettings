@@ -1,0 +1,7 @@
+'use strict'
+
+const getSettings = function(req,res) {
+    res.render("settings")
+    title: 'Metrolyse Settings'
+    }
+module.exports = getSettings
