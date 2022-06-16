@@ -5,7 +5,7 @@ const http = require('http'),
 
 const database = require('./lib/database'),
     getApp = require('./lib/getApp'),
-    app = getApp()
+    app = getApp(database)
 
 // const WebSocket = require("ws")
 
