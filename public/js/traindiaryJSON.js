@@ -1,5 +1,22 @@
+'use strict'
+// import { getBpm } from '../js/metronomControl.js'
+// import { sumToCanvas } from '../js/input.js'
 
+const traindiaryJSON = {
+    getDate() {
+        return Date.now()
+    },
 
+    getBpm() {
+        return 100 //"getBpm"
+    },
+
+    getAccPerc() {
+        return 100 //"sumToCanvas"
+    }
+}
+
+module.exports = traindiaryJSON
 
 
 
@@ -91,7 +108,7 @@
 
 // window.IDBTransaction = window.IDBTransaction || window.webkitIDBTransaction
 
-// window.IDBKeyRange 
+// window.IDBKeyRange
 
 // if(!window.indexedDB) {
 //     window.alert ("Your Browser not support Indexed DB!!!")
@@ -132,15 +149,5 @@
 // }
 
 
-// function getDate() {
-//     return Date.now()
-// }
 
-// function getBpm() {
-//     return 100
-// }
-
-// function getAccPerc() {
-//     return 100
-// }
 
