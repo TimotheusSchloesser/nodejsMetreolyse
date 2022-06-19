@@ -4,7 +4,7 @@
 
 const traindiaryJSON = {
     getDate() {
-        return Date.now()
+        return Date.now() - 110000
     },
 
     getBpm() {
