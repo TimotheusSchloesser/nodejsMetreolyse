@@ -16,16 +16,17 @@ html(lang='en')
       block title   
         title Metrolyse //-Defaulttitle
   body
+    //- block content
     include navigation
 
-      //- - var online
-      //- case online 
-      //-   when 0
-      //-   when 1
-      //-     p.onOff offline 
-      //-   default
-      //-     p.onOff online
-        //-block content
+      - var online
+      case online 
+        when 0
+        when 1
+          p.onOff offline 
+        default
+          p.onOff online
+    
     block foot  
     #footer
       p Thanks for testing!

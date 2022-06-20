@@ -1,16 +1,36 @@
     {  
-        "name": "Metrolyse",    
-        "icons": [{  
-            "src": "./public/pics/2542SticksSmall.ico",  
-            "sizes": "192x192",  
+        "name": "Metrolyse",
+        "short_name": "Metrolyse",
+        "description": "Stick-Training-App",
+        "lang": "en",
+        "scope": "../",
+        "icons": [
+            {  
+            "src": "/pics/maskable_icon.png",  
+            "sizes": "196x196",  
             "type": "image/png",
-            "theme_color": "#317EFB"
-
-        }],  
-        "start_url": "/metrolyse",  
+            "theme_color": "#00000",
+            "purpose": "any"
+        },
+        {  
+            "src": "/pics/maskable_icon.png",  
+            "sizes": "196x196",  
+            "type": "image/png",
+            "theme_color": "#00000",
+            "purpose": "maskable"
+        },
+        {  
+            "src": "/pics/maskable_icon_x512.png",  
+            "sizes": "512x512",  
+            "type": "image/png",
+            "theme_color": "#00000",
+            "purpose": "maskable"
+        }
+    ],  
+        "start_url": "/",  
         "display": "standalone",  
-        "orientation": "portrait",  
+        "orientation": "landscape",  
         "background_color": "#e17f27",  
         "theme_color": "#317EFB"
 
-    }  
+    }
