@@ -6,21 +6,21 @@
         "scope": "../",
         "icons": [
             {  
-            "src": "/pics/maskable_icon.png",  
+            "src": "/metrolyse/public/pics/maskable_icon.png",  
             "sizes": "196x196",  
             "type": "image/png",
             "theme_color": "#00000",
             "purpose": "any"
         },
         {  
-            "src": "/pics/maskable_icon.png",  
+            "src": "/metrolyse/public/pics/maskable_icon.png",  
             "sizes": "196x196",  
             "type": "image/png",
             "theme_color": "#00000",
             "purpose": "maskable"
         },
         {  
-            "src": "/pics/maskable_icon_x512.png",  
+            "src": "/metrolyse/public/pics/maskable_icon_x512.png",  
             "sizes": "512x512",  
             "type": "image/png",
             "theme_color": "#00000",
@@ -31,6 +31,6 @@
         "display": "standalone",  
         "orientation": "landscape",  
         "background_color": "#e17f27",  
-        "theme_color": "#317EFB"
+        "theme_color": "#ffffff"
 
     }
