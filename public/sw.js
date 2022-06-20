@@ -2,8 +2,11 @@
 const cacheName = 'cache-v1.02';
 const precache = [
     '/',
-    'index.html',
-    'sw.js'
+    {
+       scope: '../lib/',
+       scope: '../views/',
+       scope: '/public' 
+    }
 ];
 
 self.addEventListener('install', event => {
