@@ -1,43 +1,90 @@
-const cacheName = 'cache-v1.02';
-const precache = [
+const CACHE_NAME = 'sw-cache';
+const toCache = [
     '/',
-    'manifest.json',
-    'index.html',
-    'sw.js',
-    'app.js',
+    '/index.html',
+    '/sw.js',
+    '/cs_indexdb.js',
     './css/metroStyle.css',
-    // {
-    //     scope: '/lib'
-    // }
-
-    '/metrolyse',
-    '/settings',
-    // '/TestDB',
-    // '/stuff',
-    // '/start',
-    // '/traindiary'
+    // './views/metrolyse.pug',
+    // './views/settings.pug',
+    // './views/layout.pug',
+    'js/pwa.webmanifest',
+    './js/netState.js',
+    './js/pwa.js',
+    // './js/metronomeControl.js',
+    // './js/timer.js',
+    // './js/input.js',
+    // './js/settings.js',
+    // './js/canvas.js',
+    // './js/trainDiary.js',
+    './pics/maskable_icon.png'
 ];
 
-self.addEventListener('install', event => {
-    console.log('Install event fired');
+self.addEventListener('install', function(event) {
+  event.waitUntil(
+    caches.open(CACHE_NAME)
+      .then(function(cache) {
+        return cache.addAll(toCache)
+      })
+      .then(self.skipWaiting())
+  )
+})
+// const cacheName = 'cache-v1.02';
+// const precache = [
+//     '/',
+//     'manifest.json',
+//     'index.html',
+//     'sw.js',
+//     // 'app.js',
+//     './css/metroStyle.css',
+//     // {
+//     //     scope: '/lib'
+//     // }
+
+//     '/metrolyse',
+//     '/settings',
+//     // '/TestDB',
+//     // '/stuff',
+//     // '/start',
+//     // '/traindiary'
+// ];
+
+// self.addEventListener('install', event => {
+//     console.log('Install event fired');
+//     event.waitUntil(
+//         caches.open(cacheName)
+//             .then(cache => {
+//                 return cache.addAll(precache);
+//             })
+//     );
+// });
+
+self.addEventListener('activate', function(event) {
     event.waitUntil(
-        caches.open(cacheName)
-            .then(cache => {
-                return cache.addAll(precache);
-            })
-    );
-});
+      caches.keys()
+        .then((keyList) => {
+          return Promise.all(keyList.map((key) => {
+            if (key !== CACHE_NAME) {
+              console.log('[ServiceWorker] Removing old cache', key)
+              return caches.delete(key)
+            }
+          }))
+        })
+        .then(() => self.clients.claim())
+    )
+  })
 
-self.addEventListener('fetch', event => {
-    console.log('Request intercepted: ', event.request.url);
+  self.addEventListener('fetch', function(event) {
     event.respondWith(
-        caches.match(event.request)
-            .then(cached => {
-                return cached || fetch(event.request);
+      fetch(event.request)
+        .catch(() => {
+          return caches.open(CACHE_NAME)
+            .then((cache) => {
+              return cache.match(event.request)
             })
-    );
-});  
-
+        })
+    )
+  })
 // function sync() {
 //     navigator.serviceWorker.ready.then(sWorkerRegistration => {
 //         return sWorkerRegistration.sync.register('extendCache')

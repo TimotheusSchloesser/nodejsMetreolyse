@@ -2,13 +2,15 @@
 <html lang="en">
 
 <head>
-    <link rel="apple-touch-icon" href="/public/pics/maskable_icon_x192.png">
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="manifest" href="manifest.json">
-    <link rel="stylesheet" href="./css/metroStyle.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
     <meta name="theme-color" content="#00000"/>
+    <link rel="manifest" href="/js/pwa.webmanifest">
+    <link rel="stylesheet" href="./css/metroStyle.css">
+    <link rel="apple-touch-icon" href="/public/pics/maskable_icon_x192.png">
     <link rel="icon" type="image/x-icon" href="/public/pics/2542SticksSmall.ico">
+   
+    
     <title>Document</title>
 
     <script>
@@ -37,12 +39,13 @@
         <button id="btnAddPwa">Install</button>
     </div>
 
-    
+    <span>You are now</span> <span><b class="page-status">online</b></span>
+
 <a href="metrolyse">Open Metrolyse</a>
 
     
 
-    <script>
+    <!-- <script>
         let deferredPrompt;
         window.addEventListener('beforeinstallprompt', (e) => {
             e.preventDefault();
@@ -57,11 +60,13 @@
                 }
                 deferredPrompt = null;
             });
-        });  
+        });   -->
 
         
     </script>
     <script src="cs_indexdb.js"></script>
+    <script src="/js/netState.js"></script>
+    <script src="/js/pwa.js"></script>
 
 </body>
 
