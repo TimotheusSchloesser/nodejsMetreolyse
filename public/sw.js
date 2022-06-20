@@ -29,35 +29,7 @@ self.addEventListener('install', function(event) {
       .then(self.skipWaiting())
   )
 })
-// const cacheName = 'cache-v1.02';
-// const precache = [
-//     '/',
-//     'manifest.json',
-//     'index.html',
-//     'sw.js',
-//     // 'app.js',
-//     './css/metroStyle.css',
-//     // {
-//     //     scope: '/lib'
-//     // }
 
-//     '/metrolyse',
-//     '/settings',
-//     // '/TestDB',
-//     // '/stuff',
-//     // '/start',
-//     // '/traindiary'
-// ];
-
-// self.addEventListener('install', event => {
-//     console.log('Install event fired');
-//     event.waitUntil(
-//         caches.open(cacheName)
-//             .then(cache => {
-//                 return cache.addAll(precache);
-//             })
-//     );
-// });
 
 self.addEventListener('activate', function(event) {
     event.waitUntil(
