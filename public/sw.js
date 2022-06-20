@@ -4,7 +4,7 @@ const precache = [
     'manifest.json',
     'index.html',
     'sw.js',
-    // '../app.js',
+    'app.js',
     './css/metroStyle.css',
     // {
     //     scope: '/lib'
