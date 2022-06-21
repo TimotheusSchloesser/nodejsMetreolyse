@@ -9,7 +9,7 @@ html(lang='en')
     meta(name="viewport" content="width=device-width, initial-scale=0.6, user-scalable=no")
     link(rel="icon" type="ico" href="../pics/2542SticksSmall.ico")
     link(rel="apple-touch-icon" href="/public/pics/maskable_icon_x192.png")
-    link(rel="manifest", href="./pwa.webmanifest")
+    link(rel="manifest", href="../pwa.webmanifest")
     link(href='../css/metroStyle.css', rel = "stylesheet")
 
     
@@ -22,14 +22,6 @@ html(lang='en')
       span You are now |  
         span
           b.page-status online
-
-      - var online
-      case online 
-        when 0
-        when 1
-          p.onOff offline 
-        default
-          p.onOff online
     
     block foot  
     #footer
@@ -40,8 +32,9 @@ html(lang='en')
   script(type="module" src='../js/input.js')
   script(type="module" src='../js/settings.js')
   script(type="module" src='../js/canvas.js')
-  script(type="module" src='../js/trainDiary.js')
+  script(type="module" src='../js/traindiary.js')
+  script(type="module" src='../js/toSaveLocal.js')
   script(src="../sw.js")
-  script(src="cs_indexdb.js")
+  script(src="../js/cs_indexdb.js")
   script(src="/js/netState.js")
   script(src="../pwa.js")
