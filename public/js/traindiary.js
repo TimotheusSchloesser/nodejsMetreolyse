@@ -6,9 +6,9 @@ const buttonInsertLocalDb = document.querySelector('.insert')
 const liste = document.querySelector('.liste')
 
 // let insertDB = null
-let bla = "test"
-    buttonInsertLocalDb.addEventListener('click', ()=> {
-        // insertFunction
-        // liste = insertDB.textContent = bla
-        console.log('fluppt')
-    })
+// let bla = "test"
+//     buttonInsertLocalDb.addEventListener('click', ()=> {
+//         // insertFunction
+//         // liste = insertDB.textContent = bla
+//         console.log('fluppt')
+//     })
