@@ -4,28 +4,37 @@ html(lang='en')
   head
     title=title
     meta(charset='UTF-8')
-    meta(name="viewport" content="target-densitydpi=device-dpi, initial-scale=0.6, user-scalable=no")
+    meta(name="description", content="The Layout.pug for Metrolyse")
+    meta(name="theme-color" content="#ffffff")
+    meta(name="viewport" content="width=device-width, initial-scale=0.6, user-scalable=no")
     link(rel="icon" type="ico" href="../pics/2542SticksSmall.ico")
+    link(rel="apple-touch-icon" href="/public/pics/maskable_icon_x192.png")
+    link(rel="manifest", href="../pwa.webmanifest")
     link(href='../css/metroStyle.css', rel = "stylesheet")
-    script(type="module" src='../js/metronomControl.js')
-    script(type="module" src='../js/timer.js')
-    script(type="module" src='../js/input.js')
-    script(type="module" src='../js/settings.js')
-    script(type="module" src='../js/canvas.js')
-    script(type="module" src='../js/trainDiary.js')
-      block title   
-        title Metrolyse //-Defaulttitle
+
+    
+    block title   
+      title Metrolyse //-Defaulttitle
   body
+    //- block content
     include navigation
 
-      //- - var online
-      //- case online 
-      //-   when 0
-      //-   when 1
-      //-     p.onOff offline 
-      //-   default
-      //-     p.onOff online
-        //-block content
+      span You are now |  
+        span
+          b.page-status online
+    
     block foot  
     #footer
       p Thanks for testing!
+    
+  script(type="module" src='../js/metronomControl.js')
+  script(type="module" src='../js/timer.js')
+  script(type="module" src='../js/input.js')
+  script(type="module" src='../js/settings.js')
+  script(type="module" src='../js/canvas.js')
+  script(type="module" src='../js/traindiary.js')
+  script(type="module" src='../js/toSaveLocal.js')
+  script(src="../sw.js")
+  script(src="../js/cs_indexdb.js")
+  script(src="/js/netState.js")
+  script(src="../pwa.js")

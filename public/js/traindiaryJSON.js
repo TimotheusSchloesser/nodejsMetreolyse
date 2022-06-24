@@ -1,8 +1,66 @@
+'use strict'
+// import { getBpm } from '../js/metronomControl.js'
+// import { sumToCanvas } from '../js/input.js'
+
+const traindiaryJSON = {
+    getDate() {
+        return Date.now() - 110000
+    },
+
+    getBpm() {
+        return 100 //"getBpm"
+    },
+
+    getAccPerc() {
+        return 100 //"sumToCanvas"
+    }
+}
+
+module.exports = traindiaryJSON
 
 
-
-
-
+// db.createCollection("students", {
+//     validator: {
+//        $jsonSchema: {
+//           bsonType: "object",
+//           required: [ "name", "year", "major", "address" ],
+//           properties: {
+//              name: {
+//                 bsonType: "string",
+//                 description: "must be a string and is required"
+//              },
+//              year: {
+//                 bsonType: "int",
+//                 minimum: 2017,
+//                 maximum: 3017,
+//                 description: "must be an integer in [ 2017, 3017 ] and is required"
+//              },
+//              major: {
+//                 enum: [ "Math", "English", "Computer Science", "History", null ],
+//                 description: "can only be one of the enum values and is required"
+//              },
+//              gpa: {
+//                 bsonType: [ "double" ],
+//                 description: "must be a double if the field exists"
+//              },
+//              address: {
+//                 bsonType: "object",
+//                 required: [ "city" ],
+//                 properties: {
+//                    street: {
+//                       bsonType: "string",
+//                       description: "must be a string if the field exists"
+//                    },
+//                    city: {
+//                       bsonType: "string",
+//                       description: "must be a string and is required"
+//                    }
+//                 }
+//              }
+//           }
+//        }
+//     }
+//  })
 // var importDB = () => db.collection('trainDiary').insertOne(
 //     {
 //     excerciseDate : Date.now(),
@@ -91,7 +149,7 @@
 
 // window.IDBTransaction = window.IDBTransaction || window.webkitIDBTransaction
 
-// window.IDBKeyRange 
+// window.IDBKeyRange
 
 // if(!window.indexedDB) {
 //     window.alert ("Your Browser not support Indexed DB!!!")
@@ -132,15 +190,5 @@
 // }
 
 
-// function getDate() {
-//     return Date.now()
-// }
 
-// function getBpm() {
-//     return 100
-// }
-
-// function getAccPerc() {
-//     return 100
-// }
 

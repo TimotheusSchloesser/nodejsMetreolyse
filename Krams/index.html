@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <meta name="theme-color" content="#00000"/>
+    <link rel="manifest" href="/js/pwa.webmanifest">
+    <link rel="stylesheet" href="./css/metroStyle.css">
+    <link rel="apple-touch-icon" href="/public/pics/maskable_icon_x192.png">
+    <link rel="icon" type="image/x-icon" href="/public/pics/2542SticksSmall.ico">
+   
+    
+    <title>Document</title>
+
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('sw.js')
+                    .then(reg => {
+                        console.log('Registered!', reg);
+                    })
+                    .catch(err => {
+                        console.log('Registration failed:', err);
+                    });
+            });
+        }
+        else {
+            console.log('Service workers are not supported by this browser.');
+        }  
+    </script>
+
+</head>
+
+<body>
+
+    <!-- <div id="addPwaPrompt" style="display:none;">
+        <p>Add this application to your home screen!</p>
+        <button id="btnAddPwa">Install</button>
+    </div> -->
+
+    <span>You are now</span> <span><b class="page-status">online</b></span>
+
+<a href="metrolyse">Open Metrolyse</a>
+
+    
+
+    <!-- <script>
+        let deferredPrompt;
+        window.addEventListener('beforeinstallprompt', (e) => {
+            e.preventDefault();
+            deferredPrompt = e;
+            addPwaPrompt.style.display = 'block';
+        });
+        document.getElementById('btnAddPwa').addEventListener('click', (e) => {
+            deferredPrompt.prompt();
+            deferredPrompt.userChoice.then((choiceResult) => {
+                if (choiceResult.outcome === 'accepted') {
+                    console.log('user accepted prompt.');
+                }
+                deferredPrompt = null;
+            });
+        });   -->
+
+        
+    </script>
+    <script src="cs_indexdb.js"></script>
+    <script src="/js/netState.js"></script>
+    <script src="/js/pwa.js"></script>
+
+</body>
+
+</html>
