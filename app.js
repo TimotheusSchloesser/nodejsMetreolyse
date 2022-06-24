@@ -5,12 +5,13 @@ const http = require('http'),
 
 const database = require('./lib/database'),
     getApp = require('./lib/getApp'),
+     alias = 'findResult',
     app = getApp(database)
 
 // const WebSocket = require("ws")
 
 // Connection URL
-var mongoUrl = 'mongodb://localhost:27017/';
+
 
 const port = 80,
     sslPort = 443,
@@ -20,12 +21,8 @@ const port = 80,
     }
 
 
-database.initialize(mongoUrl, err => {
-    if (err) {
-        console.log('Failed to connect to Database')
-    } 
-})
 
+           
 
 http.createServer((req, res) => {
     console.log('redirect')
