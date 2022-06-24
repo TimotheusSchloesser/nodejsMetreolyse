@@ -5,7 +5,6 @@ const http = require('http'),
 
 const database = require('./lib/database'),
     getApp = require('./lib/getApp'),
-     alias = 'findResult',
     app = getApp(database)
 
 // const WebSocket = require("ws")
