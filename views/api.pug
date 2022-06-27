@@ -1,0 +1,13 @@
+extends layout
+block title 
+  title metrolyse
+
+block content
+  body
+    h1 Test
+    p ID passed #{output}
+    h1 #{title}
+    p Welcome to #{title}
+    form(action="/api", method="post")
+      input(type="text", name="id")
+      button(type="submit") Submit

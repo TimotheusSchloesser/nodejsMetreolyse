@@ -3,7 +3,7 @@ import { traindiaryJSON } from './traindiaryJSON.js'
  
 
 export function toSaveLocal() {
-    localStorage.setItem(Date.now(),JSON.stringify(traindiaryJSON()))
+    localStorage.setItem(Date.now(), JSON.stringify(traindiaryJSON()))
     // console.log(JSON.stringify(traindiaryJSON()))
 }
 

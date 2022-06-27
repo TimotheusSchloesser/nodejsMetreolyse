@@ -2,7 +2,19 @@ extends layout
 block title 
   
   body
-    .demo 
+
+   
+    //- form(action="/api", method="post")
+    //-   input(type="text", name="id")
+    //-   button(type="submit") Submit
+    //- - let test = 10
+    //- - let data = "bla"
+    //- - const output = { test , data} 
+    //- - const options = {method: 'POST', headers:{'Content-Type' : 'application/json'}, body: JSON.stringify(output)}
+    //- - fetch('/api/traindiary', options)
+    h1 #{output}
+       
+    //- .demo 
     //- ul
     //-   each val in #{local}
     //-     li= val
@@ -48,5 +60,4 @@ block title
     //- input(type="text", name="lname")
       
 
-    //- form(action="/api/traindiary", method="post")
-    //-   button(type="text", name="test") test
+    

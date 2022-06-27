@@ -1,24 +1,24 @@
 import {getAllSavedLocal} from './toSaveLocal.js'
 
-const test = document.querySelector('.demo')
-// const ruck = textContent.stringify(getAllSavedLocal())
 
-// let testi = JSON.parse(getAllSavedLocal())
-test.textContent = testi
 
-//  save = document.querySelector('.save')
-// const view = document.querySelector('.view')
-// const allData = getAllSavedLocal()
-// save = () => {
-//         var new_data = document.getElementById('input')
-//         if(localStorage.getItem('data') == null){
-//           localStorage.setItem('data', '[]')
-//         }
+var user = JSON.parse(localStorage.getItem('user'));
 
-//         //get old Data
-//         var old_data = localStorage.getItem('data')
-//         old_data.push(new_data)
 
-//         localStorage.setItem('data', JSON.stringify(old_data))
-//       } 
+// const data = { username: 'example' };
+//       fetch('https://lyra.et-inf.fho-emden.de:20144/api/traindiary', {
+//         method: 'POST', // or 'PUT'
+//         headers: {
+//           'Content-Type': 'application/json',
+//       },
+//       body: JSON.stringify(data),
+//       })
+//       .then(response => response.json())
+//       .then(data => {
+//       console.log('Success:'); //,data
+//       })
+//       .catch((error) => {
+//       console.error('Error:', error);
+//       });
 
+//       console.log(localStorage.getItem('dates'))
