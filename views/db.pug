@@ -3,9 +3,10 @@ block title
   title metrolyse
 
   body
-      
-  .div Erste Ausgabe für die Abgabe!
-  br  
-  .test= message
-  br
-  a(href='/metrolyse') metrolyse
+    div.mongo
+      script.
+        var testObj = !{testObj}
+        //- testObj = testObj.trim()
+        
+        console.log(JSON.parse(data))
+    a(href='/metrolyse') metrolyse

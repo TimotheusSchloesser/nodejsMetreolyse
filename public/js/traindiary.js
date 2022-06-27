@@ -1,14 +1,24 @@
+import {getAllSavedLocal} from './toSaveLocal.js'
 
-// import {toSaveLocal} from './toSaveLocal.js'
+const test = document.querySelector('.demo')
+// const ruck = textContent.stringify(getAllSavedLocal())
 
-const buttonInsertLocalDb = document.querySelector('.insert')
-// const insertFunction = toSaveLocal.request();
-const liste = document.querySelector('.liste')
+// let testi = JSON.parse(getAllSavedLocal())
+test.textContent = testi
 
-// let insertDB = null
-// let bla = "test"
-//     buttonInsertLocalDb.addEventListener('click', ()=> {
-//         // insertFunction
-//         // liste = insertDB.textContent = bla
-//         console.log('fluppt')
-//     })
+//  save = document.querySelector('.save')
+// const view = document.querySelector('.view')
+// const allData = getAllSavedLocal()
+// save = () => {
+//         var new_data = document.getElementById('input')
+//         if(localStorage.getItem('data') == null){
+//           localStorage.setItem('data', '[]')
+//         }
+
+//         //get old Data
+//         var old_data = localStorage.getItem('data')
+//         old_data.push(new_data)
+
+//         localStorage.setItem('data', JSON.stringify(old_data))
+//       } 
+

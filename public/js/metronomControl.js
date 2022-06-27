@@ -1,6 +1,7 @@
 import { Timer } from './timer.js'
-import { Input, statistics } from './input.js'
-
+import { Input } from './input.js'
+import { traindiaryJSON } from './traindiaryJSON.js'
+import { toSaveLocal } from './toSaveLocal.js'
 
 const tempoDisplay = document.querySelector('.tempo')
 const decreaseTempoBtn = document.querySelector('.adjBpm-btn-minus')
@@ -8,8 +9,8 @@ const increaseTempoBtn = document.querySelector('.adjBpm-btn-plus')
 const tempoSlider = document.querySelector('.slider')
 const startStopBtn = document.querySelector('.startButton')
 const clickAudio = new Audio('../audio/click_01.mp3')
-const dbDisplay = document.querySelector('.dbBpm')
-const dbStatistic = document.querySelector('.dbStats')
+// const dbDisplay = document.querySelector('.dbBpm')
+// const dbStatistic = document.querySelector('.dbStats')
 
 
 let bpm = 150
@@ -55,7 +56,8 @@ if (startStopBtn) {
             startStopBtn.textContent = 'O'
         } else {
             metronome.stop()
-            // dbStatistic.textContent = stats
+            traindiaryJSON()
+            toSaveLocal()
             isRunning = false
             startStopBtn.textContent = '>'
         }

@@ -1,22 +1,27 @@
 'use strict'
-// import { getBpm } from '../js/metronomControl.js'
-// import { sumToCanvas } from '../js/input.js'
+import { getBpm } from './metronomControl.js'
+import { statistics } from './input.js'
+import { getTimeStamp } from './getTimeStamp.js'
 
-const traindiaryJSON = {
-    getDate() {
-        return Date.now() - 110000
-    },
 
-    getBpm() {
-        return 100 //"getBpm"
-    },
 
-    getAccPerc() {
-        return 100 //"sumToCanvas"
-    }
+// From Data to JSON
+export function traindiaryJSON() {
+    const statistic = statistics() / 10
+    const jsonTD = [
+        {"_ID" : Date.now(),
+        "date": getTimeStamp(),
+        "bpm": getBpm(),
+        "accuracy": statistic}]
+    
+    return jsonTD
 }
 
-module.exports = traindiaryJSON
+
+
+
+
+
 
 
 // db.createCollection("students", {
