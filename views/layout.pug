@@ -6,26 +6,28 @@ html(lang='en')
     meta(charset='UTF-8')
     meta(name="description", content="The Layout.pug for Metrolyse")
     meta(name="theme-color" content="#ffffff")
-    meta(name="viewport" content="width=device-width, initial-scale=0.6, user-scalable=no")
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
     link(rel="icon" type="ico" href="../pics/2542SticksSmall.ico")
     link(rel="apple-touch-icon" href="/public/pics/maskable_icon_x192.png")
     link(rel="manifest", href="../pwa.webmanifest")
     link(href='../css/metroStyle.css', rel = "stylesheet")
 
-    
+    include navigation
     block title   
       title Metrolyse //-Defaulttitle
+      
   body
-    //- block content
-    include navigation
-
-      span You are now |  
-        span
-          b.page-status online
+    block content
+    
+      
+        br
+        span You are now |  
+          span
+            b.page-status online
     
     block foot  
-    #footer
-      p Thanks for testing!
+      #footer
+        p Thanks for testing!
     
   script(type="module" src='../js/metronomControl.js')
   script(type="module" src='../js/timer.js')

@@ -2,17 +2,31 @@ extends layout
 block title 
   
   body
+    ul#myList  
+    //- script.
+  
+    //-   function favTutorial() {  
+    //-     var mylist = document.getElementById("myList");  
+    //-     document.getElementById("favourite").value = mylist.options[mylist.selectedIndex].text;  
+    //-     }
+  
 
-   
-    //- form(action="/api", method="post")
-    //-   input(type="text", name="id")
-    //-   button(type="submit") Submit
-    //- - let test = 10
-    //- - let data = "bla"
-    //- - const output = { test , data} 
-    //- - const options = {method: 'POST', headers:{'Content-Type' : 'application/json'}, body: JSON.stringify(output)}
-    //- - fetch('/api/traindiary', options)
-    h1 #{output}
+    //- mixin list(id, ...items)
+    //-   ul(id=id)
+    //-     each item in items
+    //-       li= item
+
+    //- +list('my-list')
+        //- form(action="/api", method="post")
+        //-   input(type="text", name="id")
+        //-   button(type="submit") Submit
+        //- - let test = 10
+        //- - let data = "bla"
+        //- - const output = { test , data} 
+        //- - const options = {method: 'POST', headers:{'Content-Type' : 'application/json'}, body: JSON.stringify(output)}
+        //- - fetch('/api/traindiary', options)
+        //- h1 #{output}
+    
        
     //- .demo 
     //- ul

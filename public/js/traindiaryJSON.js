@@ -8,11 +8,11 @@ import { getTimeStamp } from './getTimeStamp.js'
 // From Data to JSON
 export function traindiaryJSON() {
     const statistic = statistics() / 10
-    const jsonTD = [
+    const jsonTD = 
         {"_ID" : Date.now(),
         "date": getTimeStamp(),
         "bpm": getBpm(),
-        "accuracy": statistic}]
+        "accuracy": statistic}
     
     return jsonTD
 }
