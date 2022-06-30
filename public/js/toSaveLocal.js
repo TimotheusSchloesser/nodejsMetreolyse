@@ -1,5 +1,6 @@
 'use strict'
 import { traindiaryJSON } from './traindiaryJSON.js'
+// import { getKey } from './traindiary.js'
  
 
 export function toSaveLocal() {
@@ -19,3 +20,19 @@ export function getAllSavedLocal() {
         }
 }
 }
+  
+
+  
+        // // Get key on a given position
+        // let key1 = localStorage.key(1);
+        // console.log(key1);
+  
+        // // Get number of stored items
+        // let items = localStorage.length;
+        // console.log("Total number of items is ", items);
+  
+
+  
+        // // Delete everything
+        // localStorage.clear();
+     

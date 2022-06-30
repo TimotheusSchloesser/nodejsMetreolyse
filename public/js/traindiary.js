@@ -1,10 +1,9 @@
-import {getAllSavedLocal} from './toSaveLocal.js'
 
 
-    //   let data = ["Ram", "Shyam", "Sita", "Gita"];
-    //   var i;
-      let list = document.getElementById("myList");
-    for (var i = 0; i < localStorage.length; i++) {
+function localOutput(){
+
+let list = document.getElementById("myList");
+for (var i = 0; i < localStorage.length; i++) {
 
         // set iteration key name
         var key = localStorage.key(i);
@@ -12,24 +11,36 @@ import {getAllSavedLocal} from './toSaveLocal.js'
         // use key name to retrieve the corresponding value
         var value = localStorage.getItem(key);
         let li = document.createElement("li");
-        li.innerText =  value
-        list.appendChild(li);
-        // console.log the iteration key and value
-        console.log('Key: ' + key + ', Value: ' + value);  
-      
-      }  
-      
-    
-    //   for (i = 0; i < localStorage.length; i++)   {
-    //     //   localStorage.key(i) 
-    //       let localEntry = [localStorage.getItem(localStorage.key(i))]
-    //       localEntry.forEach((item) => {
-    //         let li = document.createElement("li");
-    //         li.innerText = "<p class='inner' id="+i+">"+ localStorage.getItem([i].date) +"</p>" + "<br>"
-    //         list.appendChild(li);
-    //       });
-    //   }
+        const sps = value.split(/[ .;?!~,„`"&|()<>{}\[\]\r\n/\\]+/)
+        // let dateStr = value
+        let dateStr = sps[4].concat(sps[5]," ",sps[6]).replace(/:/g," ")
+        let holeStr = ". " + "| " + " " + dateStr + " | " + sps[7] + sps[8] + " | "+ sps[9] +sps[10]
+        let counter = (i + 1) 
+        li.innerText = counter + holeStr 
 
+        li.addEventListener("click", e => {
+            let key = localStorage.key(counter - 1)
+            let keyItem = localStorage.getItem(key)
+            getKey(keyItem)
+            deleteKey(key)
+           
+        })
+        list.appendChild(li); 
+      } 
+    } 
+
+    function getKey(keyItem) {
+        // console.log(keyItem)
+        return keyItem
+      }
+
+      function deleteKey(keyItem) {
+          localStorage.removeItem(keyItem)
+          console.log(keyItem)
+          window.location.reload()
+      }
+      localOutput()
+      // console.log(localStorage.length)
 // const data = { username: 'example' };
 //       fetch('https://lyra.et-inf.fho-emden.de:20144/api/traindiary', {
 //         method: 'POST', // or 'PUT'
