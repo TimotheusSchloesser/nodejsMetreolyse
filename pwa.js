@@ -7,20 +7,7 @@ function init() {
       }, (err) => {
         console.error('Service worker not registered -->', err);
       });
-  }
+  }else {
+    console.log('Service workers are not supported by this browser.');
+  }  
 }
-
-// if ('serviceWorker' in navigator) {
-//   window.addEventListener('load', () => {
-//       navigator.serviceWorker.register('sw.js')
-//           .then(reg => {
-//               console.log('Registered!', reg);
-//           })
-//           .catch(err => {
-//               console.log('Registration failed:', err);
-//           });
-//   });
-// }
-// else {
-//   console.log('Service workers are not supported by this browser.');
-// }  

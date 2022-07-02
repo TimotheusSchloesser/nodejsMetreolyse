@@ -2,6 +2,7 @@ import { Timer } from './timer.js'
 import { Input } from './input.js'
 import { traindiaryJSON } from './traindiaryJSON.js'
 import { toSaveLocal } from './toSaveLocal.js'
+import { insertToDatabase } from './traindiary.js'
 
 const tempoDisplay = document.querySelector('.tempo')
 const decreaseTempoBtn = document.querySelector('.adjBpm-btn-minus')
@@ -58,6 +59,7 @@ if (startStopBtn) {
             metronome.stop()
             traindiaryJSON()
             toSaveLocal()
+            insertToDatabase()
             isRunning = false
             startStopBtn.textContent = '>'
         }

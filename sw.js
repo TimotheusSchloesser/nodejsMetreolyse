@@ -1,7 +1,7 @@
 const CACHE_NAME = 'sw-cache';
 const toCache = [
-    './',
-    // '/index.html',
+    './'
+    // './api/td'
     // '/sw.js',
     // '/cs_indexdb.js',
     // './css/metroStyle.css',
