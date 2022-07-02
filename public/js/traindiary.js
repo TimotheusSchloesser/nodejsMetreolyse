@@ -38,8 +38,6 @@ for (var i = 0; i < localStorage.length; i++) {
       localStorage.removeItem(keyItem)
       if (navigator.onLine) {
         let j = localStorage.length-1
-        // let entryKey = localStorage.key(j);
-        // let entry = localStorage.getItem(entryKey)
         let entry = localStorage
         toMongo('remove')
       toMongo('insertResult', entry)

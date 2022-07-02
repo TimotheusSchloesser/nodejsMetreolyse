@@ -7,11 +7,8 @@ const database = require('./lib/database'),
     getApp = require('./lib/getApp'),
     app = getApp(database)
 
-// const WebSocket = require("ws")
 
 // Connection URL
-
-
 const port = 80,
     sslPort = 443,
     sslOpt = {

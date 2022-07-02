@@ -24,25 +24,25 @@ block title
         .startButton >  
       include visual
 
-        #addPwaPrompt(style="display:none;")
-        p Add this application to your home screen!
-        button#btnAddPwa Install
-        script.
-          let deferredPrompt;
-          window.addEventListener('beforeinstallprompt', (e) => {
-              e.preventDefault();
-              deferredPrompt = e;
-              addPwaPrompt.style.display = 'block';
-          });
-          document.getElementById('btnAddPwa').addEventListener('click', (e) => {
-              deferredPrompt.prompt();
-              deferredPrompt.userChoice.then((choiceResult) => {
-                  if (choiceResult.outcome === 'accepted') {
-                      console.log('user accepted prompt.');
-                  }
-                  deferredPrompt = null;
-              });
-          });
+        //- #addPwaPrompt(style="display:none;")
+        //- p Add this application to your home screen!
+        //- button#btnAddPwa Install
+        //- script.
+        //-   let deferredPrompt;
+        //-   window.addEventListener('beforeinstallprompt', (e) => {
+        //-       e.preventDefault();
+        //-       deferredPrompt = e;
+        //-       addPwaPrompt.style.display = 'block';
+        //-   });
+        //-   document.getElementById('btnAddPwa').addEventListener('click', (e) => {
+        //-       deferredPrompt.prompt();
+        //-       deferredPrompt.userChoice.then((choiceResult) => {
+        //-           if (choiceResult.outcome === 'accepted') {
+        //-               console.log('user accepted prompt.');
+        //-           }
+        //-           deferredPrompt = null;
+        //-       });
+        //-   });
   
 
 

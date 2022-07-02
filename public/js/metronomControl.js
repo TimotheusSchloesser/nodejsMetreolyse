@@ -10,18 +10,9 @@ const increaseTempoBtn = document.querySelector('.adjBpm-btn-plus')
 const tempoSlider = document.querySelector('.slider')
 const startStopBtn = document.querySelector('.startButton')
 const clickAudio = new Audio('../audio/click_01.mp3')
-// const dbDisplay = document.querySelector('.dbBpm')
-// const dbStatistic = document.querySelector('.dbStats')
-
 
 let bpm = 150
-// let stats = statistics()
-// console.log(statistics())
-// if (dbStatistic) dbStatistic.textContent = stats
-// if (tempoDisplay) {
-//     tempoDisplay.textContent = bpm
-//     dbDisplay.textContent = bpm
-// }
+
 
 let isRunning = false
 
