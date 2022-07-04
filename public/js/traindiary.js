@@ -38,6 +38,8 @@ for (var i = 0; i < localStorage.length; i++) {
       localStorage.removeItem(keyItem)
       if (navigator.onLine) {
         let j = localStorage.length-1
+        // let entryKey = localStorage.key(j);
+        // let entry = localStorage.getItem(entryKey)
         let entry = localStorage
         toMongo('remove')
       toMongo('insertResult', entry)
@@ -45,9 +47,7 @@ for (var i = 0; i < localStorage.length; i++) {
       window.location.reload()
       
   }
-  if (navigator.onLine) {
-    console.log('online');
-  }
+
     export function insertToDatabase() {
       if (navigator.onLine) {
         let entry = localStorage
@@ -71,14 +71,15 @@ for (var i = 0; i < localStorage.length; i++) {
     })
   }
 
-   
-      else {
+    function getKey(keyItem) {
+        return keyItem
+      }
+if (navigator.onLine) {
+        console.log('online');
+      } else {
         console.log('offline');
       }
       
-      function getKey(keyItem) {
-        return keyItem
-      }
       localOutput()
 
 
